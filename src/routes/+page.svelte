@@ -26,7 +26,7 @@
 </script>
 
 <main class="text-2xl grid grid-rows-[auto_auto_1fr] p-8 place-content-center gap-4">
-	<h1 class="text-6xl font-bold font-mono">Svelte Flip</h1>
+	<h1 class="text-6xl font-bold font-mono">Svelte Auto Animate</h1>
 	<h2>
 		<a class="link link-primary" href="https://auto-animate.formkit.com/#usage-svelte">
 			@formkit/auto-animate

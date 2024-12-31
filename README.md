@@ -1,4 +1,4 @@
-# Svelte Flip
+# Svelte Auto Animate
 
 ## [@formkit/auto-animate](https://auto-animate.formkit.com/#usage-svelte) but only the flip animation
 
