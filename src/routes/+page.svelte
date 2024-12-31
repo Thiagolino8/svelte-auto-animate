@@ -7,7 +7,7 @@
 
 	const numbers = $state(data.initialNumbers);
 	const transitions = { blur: blur, fly: fly, scale: scale, fade: fade };
-	let selectedTransition = $state(transitions.blur);
+	let selectedTransition = $state<(typeof transitions)[keyof typeof transitions]>(transitions.blur);
 	let show = $state.raw(true);
 
 	function toggle() {
