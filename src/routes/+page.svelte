@@ -3,9 +3,11 @@
 	import { flip } from '$lib/index.js';
 	import { blur, fade, fly, scale } from 'svelte/transition';
 
-	const numbers = $state([Math.random(), Math.random()]);
-	const transitions = [fly, scale, blur, fade];
-	let selectedTransition = $state(transitions[0]);
+	const { data } = $props();
+
+	const numbers = $state(data.initialNumbers);
+	const transitions = { blur: blur, fly: fly, scale: scale, fade: fade };
+	let selectedTransition = $state(transitions.blur);
 	let show = $state.raw(true);
 
 	function toggle() {
@@ -40,8 +42,8 @@
 			<button class="btn btn-primary join-item" onclick={shuffle}>Shuffle</button>
 			<button class="btn btn-primary join-item" onclick={toggle}>Toggle</button>
 			<select class="select select-primary w-full join-item" bind:value={selectedTransition}>
-				{#each transitions as transition}
-					<option value={transition}>{transition.name}</option>
+				{#each Object.entries(transitions) as [name, transition]}
+					<option value={transition}>{name}</option>
 				{/each}
 			</select>
 		</section>
